@@ -1,0 +1,884 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* ===== NANASU GOLD COLOR SYSTEM v2 =====
+   * Premium e-commerce palette inspired by Nanasu logo:
+   * - Primary: Nanasu Gold (luxury, premium, trust)
+   * - Neutral: Onyx (sophisticated, readable)
+   * - Secondary: Pine Green (fresh, natural, growth)
+   * - WCAG AA compliant (contrast ≥ 4.5:1)
+   */
+  --font-size: 16px;
+  
+  /* ===== PRIMARY - NANASU GOLD ===== */
+  --gold-50: #FFF8E1;
+  --gold-100: #FFEFC4;
+  --gold-200: #FFE08A;
+  --gold-300: #FFD057;
+  --gold-400: #F5BE2C;
+  --gold-500: #D4AF37;  /* Brand Base - Logo Gold */
+  --gold-600: #B38F1F;
+  --gold-700: #8C6B12;
+  --gold-800: #6B4E0A;
+  --gold-900: #4B3605;
+  
+  /* ===== NEUTRAL - ONYX ===== */
+  --onyx-50: #F5F6F7;
+  --onyx-100: #E9EBEF;
+  --onyx-200: #D8DCE3;
+  --onyx-300: #B8BEC9;
+  --onyx-400: #8A93A3;
+  --onyx-500: #5A6272;
+  --onyx-600: #3F4652;
+  --onyx-700: #2B3038;
+  --onyx-800: #1B1F24;
+  --onyx-900: #0E1114;
+  
+  /* ===== SECONDARY - PINE GREEN ===== */
+  --pine-50: #E6F3EC;
+  --pine-100: #CDE7D9;
+  --pine-200: #9FD2B9;
+  --pine-300: #6BBE98;
+  --pine-400: #3FA97B;
+  --pine-500: #1E8F61;
+  --pine-600: #16724D;
+  --pine-700: #11563A;
+  --pine-800: #0D402B;
+  --pine-900: #0A2C1E;
+  
+  /* ===== BASE/SURFACES ===== */
+  --base-white: #FFFFFF;
+  --base-paper: #FAFAFC;
+  --base-overlay: rgba(14, 17, 20, 0.56);
+  
+  /* ===== FUNCTIONAL (STATUS) ===== */
+  --success-500: #16A34A;
+  --warning-500: #F59E0B;  /* Complements gold, different enough */
+  --error-500: #DC2626;
+  --info-500: #2563EB;
+  
+  /* ===== GRADIENT HERO ===== */
+  --gradient-hero: linear-gradient(135deg, #D4AF37 0%, #1E8F61 50%, #F5BE2C 100%);
+  
+  /* ===== SEMANTIC TOKENS - LIGHT MODE ===== */
+  /* Backgrounds - Warm Gold Theme */
+  --bg-default: linear-gradient(135deg, #FFFCF5 0%, #FFF8E1 25%, #FFFBF0 50%, #FFF9EB 100%);
+  --bg-surface: rgba(255, 255, 255, 0.6);
+  --bg-card: rgba(255, 255, 255, 0.8);
+  
+  /* Text */
+  --text-primary: var(--onyx-900);
+  --text-secondary: var(--onyx-600);
+  --text-tertiary: var(--onyx-500);
+  
+  /* Borders */
+  --border-default: var(--onyx-200);
+  --border-strong: var(--onyx-300);
+  
+  /* Brand/Interactive - Gold Primary */
+  --brand-default: var(--gold-500);
+  --brand-hover: var(--gold-600);
+  --brand-pressed: var(--gold-700);
+  --brand-subtle: var(--gold-50);
+  --on-brand: var(--onyx-900);  /* Dark text on gold buttons for WCAG AA */
+  
+  /* Links - Pine Green */
+  --link-default: var(--pine-600);
+  --link-hover: var(--pine-700);
+  
+  /* Focus */
+  --focus-ring: var(--gold-300);
+  
+  /* Shadcn compatibility */
+  --background: #FFFBF0;
+  --foreground: var(--onyx-900);
+  --card: rgba(255, 255, 255, 0.8);
+  --card-foreground: var(--onyx-900);
+  --popover: rgba(255, 255, 255, 0.95);
+  --popover-foreground: var(--onyx-900);
+  --primary: var(--gold-500);
+  --primary-foreground: var(--onyx-900);  /* Dark on gold */
+  --secondary: var(--onyx-100);
+  --secondary-foreground: var(--onyx-900);
+  --muted: var(--onyx-100);
+  --muted-foreground: var(--onyx-600);
+  --accent: var(--gold-50);
+  --accent-foreground: var(--gold-700);
+  --destructive: var(--error-500);
+  --destructive-foreground: #FFFFFF;
+  --border: var(--onyx-200);
+  --input: transparent;
+  --input-background: var(--base-white);
+  --switch-background: var(--onyx-300);
+  --ring: var(--gold-300);
+  
+  /* Charts - Gold + Pine + Onyx */
+  --chart-1: var(--gold-500);
+  --chart-2: var(--pine-500);
+  --chart-3: var(--onyx-500);
+  --chart-4: var(--gold-300);
+  --chart-5: var(--pine-300);
+  
+  /* Status Colors Light */
+  --status-success-bg: rgba(22, 163, 74, 0.08);
+  --status-success-text: var(--onyx-900);
+  --status-success-border: rgba(22, 163, 74, 0.4);
+  
+  --status-warning-bg: rgba(245, 158, 11, 0.1);
+  --status-warning-text: var(--onyx-900);
+  --status-warning-border: rgba(245, 158, 11, 0.4);
+  
+  --status-error-bg: rgba(220, 38, 38, 0.1);
+  --status-error-text: var(--onyx-900);
+  --status-error-border: rgba(220, 38, 38, 0.4);
+  
+  --status-info-bg: rgba(37, 99, 235, 0.1);
+  --status-info-text: var(--onyx-900);
+  --status-info-border: rgba(37, 99, 235, 0.4);
+  
+  /* Border radius */
+  --radius: 0.75rem;
+  
+  /* Typography */
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  
+  /* Sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: var(--onyx-900);
+  --sidebar-primary: var(--gold-500);
+  --sidebar-primary-foreground: var(--onyx-900);
+  --sidebar-accent: var(--gold-100);
+  --sidebar-accent-foreground: var(--gold-700);
+  --sidebar-border: var(--onyx-200);
+  --sidebar-ring: var(--gold-300);
+}
+
+.dark {
+  /* ===== SEMANTIC TOKENS - DARK MODE ===== */
+  /* Backgrounds */
+  --bg-default: var(--onyx-900);
+  --bg-surface: var(--onyx-800);
+  --bg-card: #1B1F24;
+  
+  /* Text */
+  --text-primary: var(--base-white);
+  --text-secondary: var(--onyx-300);
+  --text-tertiary: var(--onyx-400);
+  
+  /* Borders */
+  --border-default: var(--onyx-700);
+  --border-strong: var(--onyx-600);
+  
+  /* Brand/Interactive - Brighter gold for dark mode */
+  --brand-default: var(--gold-400);
+  --brand-hover: var(--gold-500);
+  --brand-pressed: var(--gold-600);
+  --brand-subtle: rgba(245, 190, 44, 0.1);
+  --on-brand: var(--onyx-900);  /* Keep dark text on bright gold */
+  
+  /* Links - Lighter pine for dark */
+  --link-default: var(--pine-300);
+  --link-hover: var(--pine-200);
+  
+  /* Focus */
+  --focus-ring: rgba(255, 208, 87, 0.6);
+  
+  /* Shadcn compatibility */
+  --background: var(--onyx-900);
+  --foreground: var(--base-white);
+  --card: #1B1F24;
+  --card-foreground: var(--base-white);
+  --popover: #1B1F24;
+  --popover-foreground: var(--base-white);
+  --primary: var(--gold-400);
+  --primary-foreground: var(--onyx-900);  /* Dark on bright gold */
+  --secondary: var(--onyx-800);
+  --secondary-foreground: var(--base-white);
+  --muted: var(--onyx-800);
+  --muted-foreground: var(--onyx-300);
+  --accent: rgba(245, 190, 44, 0.1);
+  --accent-foreground: var(--gold-300);
+  --destructive: var(--error-500);
+  --destructive-foreground: #FFFFFF;
+  --border: var(--onyx-700);
+  --input: var(--onyx-700);
+  --input-background: var(--onyx-800);
+  --switch-background: var(--onyx-600);
+  --ring: rgba(255, 208, 87, 0.6);
+  
+  /* Charts - Lighter variants for dark */
+  --chart-1: var(--gold-400);
+  --chart-2: var(--pine-400);
+  --chart-3: var(--onyx-400);
+  --chart-4: var(--gold-200);
+  --chart-5: var(--pine-200);
+  
+  /* Status Colors Dark */
+  --status-success-bg: rgba(22, 163, 74, 0.15);
+  --status-success-text: var(--base-white);
+  --status-success-border: rgba(22, 163, 74, 0.4);
+  
+  --status-warning-bg: rgba(245, 158, 11, 0.15);
+  --status-warning-text: var(--base-white);
+  --status-warning-border: rgba(245, 158, 11, 0.4);
+  
+  --status-error-bg: rgba(220, 38, 38, 0.15);
+  --status-error-text: var(--base-white);
+  --status-error-border: rgba(220, 38, 38, 0.4);
+  
+  --status-info-bg: rgba(37, 99, 235, 0.15);
+  --status-info-text: var(--base-white);
+  --status-info-border: rgba(37, 99, 235, 0.4);
+  
+  /* Sidebar */
+  --sidebar: var(--onyx-800);
+  --sidebar-foreground: var(--base-white);
+  --sidebar-primary: var(--gold-400);
+  --sidebar-primary-foreground: var(--onyx-900);
+  --sidebar-accent: rgba(212, 175, 55, 0.15);
+  --sidebar-accent-foreground: var(--gold-300);
+  --sidebar-border: var(--onyx-700);
+  --sidebar-ring: rgba(255, 208, 87, 0.6);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Custom color utilities - NANASU GOLD SYSTEM */
+  --color-gold-50: var(--gold-50);
+  --color-gold-100: var(--gold-100);
+  --color-gold-200: var(--gold-200);
+  --color-gold-300: var(--gold-300);
+  --color-gold-400: var(--gold-400);
+  --color-gold-500: var(--gold-500);
+  --color-gold-600: var(--gold-600);
+  --color-gold-700: var(--gold-700);
+  --color-gold-800: var(--gold-800);
+  --color-gold-900: var(--gold-900);
+  
+  --color-onyx-50: var(--onyx-50);
+  --color-onyx-100: var(--onyx-100);
+  --color-onyx-200: var(--onyx-200);
+  --color-onyx-300: var(--onyx-300);
+  --color-onyx-400: var(--onyx-400);
+  --color-onyx-500: var(--onyx-500);
+  --color-onyx-600: var(--onyx-600);
+  --color-onyx-700: var(--onyx-700);
+  --color-onyx-800: var(--onyx-800);
+  --color-onyx-900: var(--onyx-900);
+  
+  --color-pine-50: var(--pine-50);
+  --color-pine-100: var(--pine-100);
+  --color-pine-200: var(--pine-200);
+  --color-pine-300: var(--pine-300);
+  --color-pine-400: var(--pine-400);
+  --color-pine-500: var(--pine-500);
+  --color-pine-600: var(--pine-600);
+  --color-pine-700: var(--pine-700);
+  --color-pine-800: var(--pine-800);
+  --color-pine-900: var(--pine-900);
+  
+  --color-success-500: var(--success-500);
+  --color-warning-500: var(--warning-500);
+  --color-error-500: var(--error-500);
+  --color-info-500: var(--info-500);
+  
+  --color-status-success-bg: var(--status-success-bg);
+  --color-status-success-text: var(--status-success-text);
+  --color-status-success-border: var(--status-success-border);
+  
+  --color-status-warning-bg: var(--status-warning-bg);
+  --color-status-warning-text: var(--status-warning-text);
+  --color-status-warning-border: var(--status-warning-border);
+  
+  --color-status-error-bg: var(--status-error-bg);
+  --color-status-error-text: var(--status-error-text);
+  --color-status-error-border: var(--status-error-border);
+  
+  --color-status-info-bg: var(--status-info-bg);
+  --color-status-info-text: var(--status-info-text);
+  --color-status-info-border: var(--status-info-border);
+  
+  --color-brand-default: var(--brand-default);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-pressed: var(--brand-pressed);
+  --color-brand-subtle: var(--brand-subtle);
+  --color-on-brand: var(--on-brand);
+  
+  --color-link-default: var(--link-default);
+  --color-link-hover: var(--link-hover);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  
+  --color-bg-default: var(--bg-default);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-card: var(--bg-card);
+  
+  --color-border-default: var(--border-default);
+  --color-border-strong: var(--border-strong);
+  
+  --color-focus-ring: var(--focus-ring);
+  
+  --color-base-white: var(--base-white);
+  --color-base-paper: var(--base-paper);
+  --color-base-overlay: var(--base-overlay);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply text-foreground;
+    background: linear-gradient(135deg, #FFFCF5 0%, #FFF8E1 25%, #FFFBF0 50%, #FFF9EB 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  
+  .dark body {
+    background: linear-gradient(135deg, #0E1114 0%, #1B1F24 25%, #2B3038 50%, #0E1114 100%);
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Hide scrollbar for all browsers */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* ===== PERFORMANCE ANIMATIONS ===== */
+
+/* Shimmer effect for loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Blur-up effect for progressive image loading */
+@keyframes blurUp {
+  0% {
+    filter: blur(8px);
+    opacity: 0.6;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide down animation for notifications */
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/* Pulse subtle animation */
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Utility classes */
+.shimmer {
+  animation: shimmer 1.5s infinite linear;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .shimmer {
+    animation: none;
+  }
+}
+
+/* ===== MODERN ANIMATIONS ===== */
+
+/* Entrance animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInFast {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply animations to page content */
+.page-transition {
+  animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in {
+  animation: fadeInFast 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slide-in-bottom {
+  animation: slideInFromBottom 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slide-in-right {
+  animation: slideInFromRight 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scale-in {
+  animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+.rotate {
+  animation: rotate 1s linear infinite;
+}
+
+/* Smooth transitions for interactive elements */
+button, a, input, select, textarea {
+  transition-property: color, background-color, border-color, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Modern hover effects - Updated with GOLD accents */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -6px rgba(212, 175, 55, 0.25);
+}
+
+.hover-scale {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px -4px rgba(212, 175, 55, 0.35), 0 0 0 1px rgba(212, 175, 55, 0.15);
+}
+
+.hover-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.hover-shine:hover::before {
+  left: 100%;
+}
+
+/* Modern card shadows - Gold tinted */
+.shadow-elegant {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-elegant-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -4px rgba(0, 0, 0, 0.06);
+}
+
+/* Gradient overlays */
+.gradient-overlay {
+  position: relative;
+}
+
+.gradient-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.6));
+  pointer-events: none;
+}
+
+/* Glass morphism effects - GOLD THEME */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(212, 175, 55, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(212, 175, 55, 0.12),
+              0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 24px 0 rgba(212, 175, 55, 0.1),
+              0 2px 8px 0 rgba(0, 0, 0, 0.04);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 16px 0 rgba(212, 175, 55, 0.08);
+}
+
+.dark .glass {
+  background: rgba(27, 31, 36, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.dark .glass-card {
+  background: rgba(27, 31, 36, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5),
+              0 1px 2px 0 rgba(255, 255, 255, 0.05);
+}
+
+.dark .glass-nav {
+  background: rgba(27, 31, 36, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.5),
+              0 2px 8px 0 rgba(255, 255, 255, 0.02);
+}
+
+.dark .glass-panel {
+  background: rgba(27, 31, 36, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Hero gradient background - GOLD + PINE */
+.bg-gradient-hero {
+  background: var(--gradient-hero);
+}
+
+.bg-gradient-hero-subtle {
+  background: var(--gradient-hero);
+  opacity: 0.1;
+}
+
+/* Focus ring utility */
+.focus-ring {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Decorative Background Pattern - GOLD THEME */
+.bg-pattern {
+  position: relative;
+}
+
+.bg-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(30, 143, 97, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(245, 190, 44, 0.12) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Gold mesh gradient overlay */
+.gold-mesh {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.2) 0px, transparent 50%),
+    radial-gradient(at 50% 0%, rgba(245, 190, 44, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(30, 143, 97, 0.12) 0px, transparent 50%);
+}
+
+/* Tropical mesh gradient overlay - LEGACY SUPPORT */
+.tropical-mesh {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.15) 0px, transparent 50%),
+    radial-gradient(at 50% 0%, rgba(245, 190, 44, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(30, 143, 97, 0.1) 0px, transparent 50%);
+}
+
+/* Scroll behavior 
+ * Default smooth scroll for anchor links within a page
+ * Page navigation uses instant scroll via JavaScript for immediate feedback
+ * See: App.tsx useEffect for page transition scroll handling
+ */
+html {
+  scroll-behavior: smooth;
+}
