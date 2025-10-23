@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
   # Nanasu_E-Commerce
 
@@ -9,3 +10,6 @@
 
   Run `npm run dev` to start the development server.
   
+=======
+# e-commerce-nanasu
+>>>>>>> ed735c2aedf4ddf9e4dd43e93f08821ce3619968
